@@ -160,9 +160,10 @@ def play_link(chn, src):
 		pageUrl = pageUrl+"/"+data['channels'][chn]['src']['referer']
 	flashVer = 'LNX_11,2,202,233'
 	token = data['sources'][src]['token']
+	timeout = data['sources'][src]['timeout']
 	app = data['sources'][src]['app']
 
-	full_url = videoUrl+' swfVfy=1 live=1 token='+token+' playpath='+playpath+' flashVer='+flashVer+' pageUrl='+pageUrl+' tcUrl='+videoUrl+' swfUrl='+swfUrl
+	full_url = videoUrl+' swfVfy=1 live=1 timeout='+timeout+' token='+token+' playpath='+playpath+' flashVer='+flashVer+' pageUrl='+pageUrl+' tcUrl='+videoUrl+' swfUrl='+swfUrl
 
 	xbmc.Player(xbmc.PLAYER_CORE_DVDPLAYER).play(full_url, item)
 	return
